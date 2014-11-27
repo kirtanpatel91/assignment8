@@ -1,10 +1,9 @@
 /*Kirtan Patel
 kirtan_patel@student.uml.edu
 Umass Lowell Computer Science 91.461 GUI Programming I
-Created: October 26, 2014
-This website is mainly for creating a multiplcation table by using javascript and css files. I was having some difficulties with javascript so i got helped for it. 
+Created: November 26, 2014
+In this website its going to be mainly using previous assignment 6 and modified by Using the jQuery Validation Plugin and jQueryUI Tabbed Widget. Where i little bit tough time figuring out.
 */
-
 /* styling the body, where to start */
 body {
     background:#7D261D;
@@ -44,4 +43,8 @@ button:focus {
     outline:none;
     border-color:#9ecaed;
     box-shadow:0 0 10px #9ecaed
+}
+
+li {
+    display:inline
 }

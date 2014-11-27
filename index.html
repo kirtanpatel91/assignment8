@@ -3,23 +3,30 @@
 Kirtan Patel
 kirtan_patel@student.uml.edu
 Umass Lowell Computer Science 91.461 GUI Programming I
-Created: October 26, 2014
-This website is mainly for creating a multiplcation table by using javascript and css files. I was having some difficulties with javascript so i got helped for it. 
+Created: November 26, 2014
+In this website its going to be mainly using previous assignment 6 and modified by Using the jQuery Validation Plugin and jQueryUI Tabbed Widget. Where i little bit tough time figuring out. 
 -->
 <html>
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
 
     <title>Create a multiplication table</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel=
-    'stylesheet' type='text/css'> <!-- font styles from google --> 
+    'stylesheet' type='text/css'><!-- font styles from google -->
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="table.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="css/jquery-ui-1.8.9.custom.css"> 
+    <link href=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
+    rel="stylesheet">
+    <script src=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui-1.8.9.custom.css" rel="stylesheet">
+    <script src="additional-methods.js" type="text/javascript"></script>
+</head>
 
-<body> <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
+<body>
+    <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
+
     <form action="javascript:void(0)" id="inputs" name="inputs">
         Please Enter the Values to Create a table for Multiplication.<br>
         Start row <input autofocus="" id="pOne" onkeyup=
@@ -31,37 +38,44 @@ This website is mainly for creating a multiplcation table by using javascript an
         End column <input id="pFour" onkeyup="return numbersonly(this, event)"
         type="text" value="0"><br>
         <button onclick="crTable()" type="button">Create</button>
-    </form>    
-</head>
- <!--
+    </form><!--
   File:  D:\H-Drive\Texts\jQuery\Book-Wellman-jQueryUI1.8\6525_Code\6525_03_code_final\tabs1.html
     Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
      Copyright (c) 2011 Packt Publishing.  This codes is found on pp. 62-63.
      Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
     updated by JMH on November 12, 2012 at 9:59 AM
-  -->  
-      <script type="text/javascript">
-        // added by JMH for consistency with other uses of jQuery
+  --><script type="text/javascript">
+// added by JMH for consistency with other uses of jQuery
         $(document).ready( function() {
           $("#myTabs").tabs();
         } ) ;
-      </script>
-    </head>
-    <body>
-      <div id="myTabs">
+    </script>
+
+    <div id="myTabs">
         <ul>
-          <li><a href="#a">Tab 1</a></li>
-          <li><a href="#b">Tab 2</a></li>
+            <li>
+                <a href="#a">Tab 1</a>
+            </li>
+
+            <li>
+                <a href="#b">Tab 2</a>
+            </li>
         </ul>
-        <div id="a">This is the content panel linked to the first tab, it is shown by default.</div>
-        <div id="b">This content is linked to the second tab and will be shown when its tab is clicked.</div>
-      </div>
-      <script>
-        // removed by JMH, but see note above on this structure
+
+        <div id="a">
+            This is the content panel linked to the first tab, it is shown by
+            default.
+        </div>
+
+        <div id="b">
+            This content is linked to the second tab and will be shown when its
+            tab is clicked.
+        </div>
+    </div><script>
+// removed by JMH, but see note above on this structure
         // (function($){
         //   $("#myTabs").tabs();
         // })(jQuery);
-    </script> 
-
+    </script>
 </body>
 </html>
