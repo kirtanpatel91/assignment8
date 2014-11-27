@@ -17,6 +17,21 @@ This website is mainly for creating a multiplcation table by using javascript an
     <script src="table.js" type="text/javascript"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui-1.8.9.custom.css"> 
+
+<body> <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
+    <form action="javascript:void(0)" id="inputs" name="inputs">
+        Please Enter the Values to Create a table for Multiplication.<br>
+        Start row <input autofocus="" id="pOne" onkeyup=
+        "return numbersonly(this, event)" type="text" value="0"><br>
+        End row <input id="pTwo" onkeyup="return numbersonly(this, event)"
+        type="text" value="0"><br>
+        Start column <input id="pThree" onkeyup=
+        "return numbersonly(this, event)" type="text" value="0"><br>
+        End column <input id="pFour" onkeyup="return numbersonly(this, event)"
+        type="text" value="0"><br>
+        <button onclick="crTable()" type="button">Create</button>
+    </form>    
 </head>
  <!--
   File:  D:\H-Drive\Texts\jQuery\Book-Wellman-jQueryUI1.8\6525_Code\6525_03_code_final\tabs1.html
@@ -24,9 +39,7 @@ This website is mainly for creating a multiplcation table by using javascript an
      Copyright (c) 2011 Packt Publishing.  This codes is found on pp. 62-63.
      Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
     updated by JMH on November 12, 2012 at 9:59 AM
-  -->
-      <link rel="stylesheet" href="css/jquery-ui-1.8.9.custom.css"> 
-     
+  -->  
       <script type="text/javascript">
         // added by JMH for consistency with other uses of jQuery
         $(document).ready( function() {
@@ -50,18 +63,5 @@ This website is mainly for creating a multiplcation table by using javascript an
         // })(jQuery);
     </script> 
 
-<body> <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
-    <form action="javascript:void(0)" id="inputs" name="inputs">
-        Please Enter the Values to Create a table for Multiplication.<br>
-        Start row <input autofocus="" id="pOne" onkeyup=
-        "return numbersonly(this, event)" type="text" value="0"><br>
-        End row <input id="pTwo" onkeyup="return numbersonly(this, event)"
-        type="text" value="0"><br>
-        Start column <input id="pThree" onkeyup=
-        "return numbersonly(this, event)" type="text" value="0"><br>
-        End column <input id="pFour" onkeyup="return numbersonly(this, event)"
-        type="text" value="0"><br>
-        <button onclick="crTable()" type="button">Create</button>
-    </form>
 </body>
 </html>
