@@ -5,56 +5,69 @@ kirtan_patel@student.uml.edu
 Umass Lowell Computer Science 91.461 GUI Programming I
 Created: November 26, 2014
 In this website its going to be mainly using previous assignment 6 and modified by Using the jQuery Validation Plugin and jQueryUI Tabbed Widget. Where i little bit tough time figuring out. 
+I have gotten some help from Takiyu Lo & Mihr Patel
 -->
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <title> </title>
+    <title>Assignment 8</title>
     <!-- it's loading bootsctrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Just a style sheet file -->
-    <link rel="stylesheet" href="style.css" type="text/css"> 
-
+    <link href=
+    "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel=
+    "stylesheet">
+    <!-- css file -->
+    <link href="style.css" rel="stylesheet" type="text/css">
     <!-- In this section, it would maximize speed of page loading by putting all js at the end -->
     <!-- it loads jQuery min -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!-- it loads jQuery UI -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-   
-    <!-- The jQuery Validation plugin is from http://jqueryvalidation.org/ -->
-     <!-- jQuery UI css file which I got it from google api's -->
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-    <!-- load jQuery Validator -->
-	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
-     <!-- load main javascript file -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!-- it loads jQuery UI -->
+
+    <script src=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<!-- The jQuery Validation plugin is from http://jqueryvalidation.org/ -->
+    <!-- jQuery UI css file which I got it from google api's -->
+    <link href=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
+    rel="stylesheet"><!-- load jQuery Validator -->
+
+    <script src=
+    "//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script><!-- load main javascript file -->
+
     <script src="table.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
-    <h1> Create a multiplication table </h1>
-  <button type="button" id="delete">Delete Selected tabs</button>
-  <div id="tabs">
+    <!-- In this body, I imported the javasript inputs and Its asking a user to enter the values to for the table -->
+
+	<!-- Header -->
+    <h1>jQuery Validation Plugin and jQueryUI Tabbed Widget</h1>
+    <button id="delete" type= "button">Remove Selected tabs</button>
+	
+	
+    <div id="tabs">
         <ul>
-            <li><a href="#inputs">Inputs</a></li>
+            <li>
+                <a href="#inputs">Inputs</a>
+            </li>
         </ul>
-    <div id="inputs">
-    <form action="javascript:void(0)" id="form" >
-        Please Enter the Values to Create a table for Multiplication.<br>
-
-        Start row <input  name="pOne" id="pOne" type="number" autofocus required><br>
-
-        End row <input id="pTwo" name="pTwo" type="number" required ><br>
-
-        Start column <input name="pThree" id="pThree" type="number" required><br>
-
-        End column <input id="pFour" name="pFour" type="number" required><br>
-
-        <button  type="submit" id= "create">Create Tab</button>
-    </form>
-  </div>
-</div>
-</body>
-</html>
+        
+		<!-- This div would include forms -->
+        <div id="inputs">
+            <form action="javascript:void(0)" id="form" name="form">
+                Please Enter a Values to Create a multiplication table or matrix.<br>
+                Start Row <input autofocus="" id="pOne" name="pOne" required=""
+                type="number"><br>
+                End Row <input id="pTwo" name="pTwo" required="" type=
+                "number"><br>
+                Start Column <input id="pThree" name="pThree" required="" type=
+                "number"><br>
+                End Column <input id="pFour" name="pFour" required="" type=
+                "number"><br>
+                <button id="create" type="submit">Create Tab</button>
+            </form>
+            
+        </div>
+    </div>
+</body> <!-- End of body -->
+</html> <!-- End of Html -->

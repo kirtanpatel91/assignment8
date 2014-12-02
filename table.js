@@ -1,23 +1,30 @@
 //Kirtan Patel
 //kirtan_patel@student.uml.edu
 //Umass Lowell Computer Science 91.461 GUI Programming I
-//Created: October 26, 2014
-//This website is mainly for creating a multiplcation table by using javascript and css files. I was having some difficulties with javascript so i got helped for it. 
+//Created: November 26, 2014
+// This file is mainly for creating a multiplication table that user will input. 
+// I have also added some validator forms to insure user has inserted the right value
+// I have gotten some help from Takiyu Lo & Mihr Patel
 
 $(document).ready(function() {
     var tabs = $("#tabs").tabs();
-    // validator
-    $.validator.addMethod('greaterThanRowStart', function(value, element, param){
-        if (pTwo.value === "") {
-            return true;
-        }
-        return parseInt(pTwo.value) >= parseInt(pOne.value);
-    }, "The ending point must be greater than the starting point.");
-
-    $.validator.addMethod('greaterThanColStart', function(value, element, param){
-        return parseInt(pFour.value) >= parseInt(pThree.value);
-    }, "The ending point must be greater than the starting point.");
-
+    // validator 
+    $.validator.addMethod('higherThanRowStart', function(value,
+            element, param) {
+            if (pTwo.value === "") {
+                return true;
+            }
+            return parseInt(pTwo.value) >= parseInt(pOne.value);
+        },
+        "It must be higher value than the above inserted value point."
+    );
+    $.validator.addMethod('higherThanColStart', function(value,
+            element, param) {
+            return parseInt(pFour.value) >= parseInt(pThree.value);
+        },
+        "It must be higher value than the above inserted value point."
+    );
+    // I got this validator from professor's handout that we used for class notes.
     $('#form').validate({
         rules: {
             pOne: {
@@ -27,7 +34,7 @@ $(document).ready(function() {
             pTwo: {
                 required: true,
                 digits: true,
-                greaterThanRowStart: true
+                higherThanRowStart: true
             },
             pThree: {
                 required: true,
@@ -36,7 +43,7 @@ $(document).ready(function() {
             pFour: {
                 required: true,
                 digits: true,
-                greaterThanColStart: true
+                higherThanColStart: true
             }
         },
         onkeyup: function(element) {
@@ -48,6 +55,7 @@ $(document).ready(function() {
                     true);
             }
         },
+        
         /* "The validation plugin allows you to configure these class names"
          * http://stackoverflow.com/questions/6168926/jquery-validation-how-to-make-fields-red
          */
@@ -75,27 +83,27 @@ $(document).ready(function() {
                 // creates a cell
                 var cell = document.createElement("td");
                 var cellText;
-                
                 // give some style to the cell/table
-				var cellStyle =
-				"padding: 10px; color: white; border: 1px solid black; border-radius: 5px; ";
-				if (i == pOne && j == pThree) {
-					cellText = document.createTextNode("");
-						cell.setAttribute("style", cellStyle +
-					"background-color: #80A2BF");
-					} else if (i == pOne) {
-				cellText = document.createTextNode(j - 1);
-cell.setAttribute("style", cellStyle +
-"background-color: #BF9D80");
-} else if (j == pThree) {
-cellText = document.createTextNode(i - 1);
-cell.setAttribute("style", cellStyle +
-"background-color: #BF9D80");
-} else {
-cellText = document.createTextNode((i - 1) * (j - 1));
-cell.setAttribute("style", cellStyle +
-"background-color: #BFCDD9");
-}
+                var cellStyle =
+                    "padding: 10px; color: white; border: 1px solid black; border-radius: 5px; ";
+                if (i == pOne && j == pThree) {
+                    cellText = document.createTextNode("");
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: #80A2BF");
+                } else if (i == pOne) {
+                    cellText = document.createTextNode(j - 1);
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: #BF9D80");
+                } else if (j == pThree) {
+                    cellText = document.createTextNode(i - 1);
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: #BF9D80");
+                } else {
+                    cellText = document.createTextNode((i - 1) * (j -
+                        1));
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: #BFCDD9");
+                }
                 // add the text to cell
                 cell.appendChild(cellText);
                 // add the cell to row
@@ -112,13 +120,14 @@ cell.setAttribute("style", cellStyle +
     var tabsdiv = $("#tabs");
     var tabslist = tabsdiv.find("ul");
     var nextTabNo = tabslist.find("li").length;
-    // When create button click, a new tab will generate
+    // This is for create button click, which will generate a new tab. 
     $('#create').click(function() {
         // check for first time
         if (!$('form').valid()) {
             $('form').find(":submit").attr("disabled", true);
             return;
         }
+        
         /* create a new tab with close button next to it
          * http://stackoverflow.com/questions/14357614/add-close-button-to-jquery-ui-tabs
          */
@@ -136,7 +145,7 @@ cell.setAttribute("style", cellStyle +
         ++nextTabNo;
         $('#tabs').tabs("refresh");
     });
-    // When close span clicked, it will close the tab that are closest to which you clicked
+    // When you clicked the close span, it will close the tab. 
     tabs.delegate("span.ui-icon-circle-close", "click", function() {
         var panelId = $(this).closest("li").remove().attr(
             "aria-controls");
