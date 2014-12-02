@@ -6,76 +6,55 @@ Umass Lowell Computer Science 91.461 GUI Programming I
 Created: November 26, 2014
 In this website its going to be mainly using previous assignment 6 and modified by Using the jQuery Validation Plugin and jQueryUI Tabbed Widget. Where i little bit tough time figuring out. 
 -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <title>Create a multiplication table</title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel=
-    'stylesheet' type='text/css'><!-- font styles from google -->
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title> </title>
+    <!-- it's loading bootsctrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Just a style sheet file -->
+    <link rel="stylesheet" href="style.css" type="text/css"> 
+
+    <!-- In this section, it would maximize speed of page loading by putting all js at the end -->
+    <!-- it loads jQuery min -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- it loads jQuery UI -->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+   
+    <!-- The jQuery Validation plugin is from http://jqueryvalidation.org/ -->
+     <!-- jQuery UI css file which I got it from google api's -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <!-- load jQuery Validator -->
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+     <!-- load main javascript file -->
     <script src="table.js" type="text/javascript"></script>
-    <link href=
-    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
-    rel="stylesheet">
-    <script src=
-    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <link href="css/jquery-ui-1.8.9.custom.css" rel="stylesheet">
-    <script src="additional-methods.js" type="text/javascript"></script>
 </head>
 
 <body>
     <!-- in this body, i imported the javasript inputs and and asking a user to enter the values to for the table -->
-
-    <form action="javascript:void(0)" id="inputs" name="inputs">
-        Please Enter the Values to Create a table for Multiplication.<br>
-        Start row <input autofocus="" id="pOne" onkeyup=
-        "return numbersonly(this, event)" type="text" value="0"><br>
-        End row <input id="pTwo" onkeyup="return numbersonly(this, event)"
-        type="text" value="0"><br>
-        Start column <input id="pThree" onkeyup=
-        "return numbersonly(this, event)" type="text" value="0"><br>
-        End column <input id="pFour" onkeyup="return numbersonly(this, event)"
-        type="text" value="0"><br>
-        <button onclick="crTable()" type="button">Create</button>
-    </form><!--
-  File:  D:\H-Drive\Texts\jQuery\Book-Wellman-jQueryUI1.8\6525_Code\6525_03_code_final\tabs1.html
-    Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
-     Copyright (c) 2011 Packt Publishing.  This codes is found on pp. 62-63.
-     Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
-    updated by JMH on November 12, 2012 at 9:59 AM
-  --><script type="text/javascript">
-// added by JMH for consistency with other uses of jQuery
-        $(document).ready( function() {
-          $("#myTabs").tabs();
-        } ) ;
-    </script>
-
-    <div id="myTabs">
+    <h1> Create a multiplication table </h1>
+  <button type="button" id="delete">Delete Selected tabs</button>
+  <div id="tabs">
         <ul>
-            <li>
-                <a href="#a">Tab 1</a>
-            </li>
-
-            <li>
-                <a href="#b">Tab 2</a>
-            </li>
+            <li><a href="#inputs">Inputs</a></li>
         </ul>
+    <div id="inputs">
+    <form action="javascript:void(0)" id="form" >
+        Please Enter the Values to Create a table for Multiplication.<br>
 
-        <div id="a">
-            This is the content panel linked to the first tab, it is shown by
-            default.
-        </div>
+        Start row <input  name="pOne" id="pOne" type="number" autofocus required><br>
 
-        <div id="b">
-            This content is linked to the second tab and will be shown when its
-            tab is clicked.
-        </div>
-    </div><script>
-// removed by JMH, but see note above on this structure
-        // (function($){
-        //   $("#myTabs").tabs();
-        // })(jQuery);
-    </script>
+        End row <input id="pTwo" name="pTwo" type="number" required ><br>
+
+        Start column <input name="pThree" id="pThree" type="number" required><br>
+
+        End column <input id="pFour" name="pFour" type="number" required><br>
+
+        <button  type="submit" id= "create">Create Tab</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
